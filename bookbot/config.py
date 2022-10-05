@@ -1,12 +1,14 @@
 from environs import Env
 
-class Config():
-    def __init__(self, token, admin_ids):
+# Создаем класс Config с полями token и admin_ids
+class Config:
+    def __init__(self, token: str, admin_ids: list[int]) -> None:
         self.token = token
         self.admin_ids = admin_ids
 
 
-def load_config(path: str = None):
+# Создаем функцию, которая будет читать файл .env возвращать экземпляр класса Config с заполненными полями token и admin_ids
+def load_config(path: str = None) -> Config:
     env = Env()
     env.read_env(path)
 

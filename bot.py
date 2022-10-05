@@ -12,7 +12,7 @@ from bookbot.keyboards.main_menu import set_main_menu
 logger = logging.getLogger(__name__)
 
 
-def register_all_handlers(dp: Dispatcher):
+def register_all_handlers(dp: Dispatcher) -> None:
     register_user_handlers(dp)
     register_echo_handler(dp)
 
